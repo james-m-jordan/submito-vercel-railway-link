@@ -54,3 +54,7 @@ RAILWAY_TARGET_URL=https://example.com npm run dev
 - **Reviewers still see the old Vercel content** – confirm the deployment is
   using this repository and the environment variable is set in the production
   environment.
+
+## Deployment note
+
+This repo powers the Vercel redirect for Railway.
