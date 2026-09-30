@@ -15,10 +15,10 @@ base.
 
 ## Setup
 
-1. Clone this repository locally and install dependencies:
+1. Use Node.js 22, clone this repository locally, and install the locked dependencies:
 
    ```bash
-   npm install
+   npm ci
    ```
 
 2. Deploy to Vercel (or connect the existing Vercel project to this repo).
@@ -54,6 +54,21 @@ RAILWAY_TARGET_URL=https://example.com npm run dev
 - **Reviewers still see the old Vercel content** – confirm the deployment is
   using this repository and the environment variable is set in the production
   environment.
+
+## Validation before deployment
+
+```bash
+npm ci
+npm run lint
+npm run build
+npm test
+npm audit
+```
+
+The integration tests run the standalone build on temporary localhost ports and
+check redirects, path/query preservation, diagnostics, static assets, and missing
+or invalid target configuration. Build without `RAILWAY_TARGET_URL` to exercise
+the fallback page in the tests.
 
 ## Deployment note
 
