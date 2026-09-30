@@ -22,7 +22,7 @@ export function middleware(request) {
   let destination;
   try {
     destination = new URL(`${request.nextUrl.pathname}${request.nextUrl.search}${request.nextUrl.hash}`, target);
-  } catch (error) {
+  } catch {
     const body = JSON.stringify({
       error: 'Invalid RAILWAY_TARGET_URL',
       message: 'Update the environment variable to a valid absolute URL.'
